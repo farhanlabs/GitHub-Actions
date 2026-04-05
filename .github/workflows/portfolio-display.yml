@@ -22,7 +22,7 @@ jobs:
 
       # Step 2: Cloud Machine ko GitHub Pages ke liye ready karo
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-github-pages@v4
 
       # Step 3: Files ko upload karo (Artifact banana)
       - name: Upload artifact
