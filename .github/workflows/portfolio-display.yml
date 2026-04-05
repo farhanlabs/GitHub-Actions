@@ -1,0 +1,36 @@
+name: Portfolio Deploy
+
+# 1. Kab chalega? (Trigger)
+on:
+  push:
+    branches: ["main"]  # Jab aap main branch par code push karoge
+
+# 2. Permissions (Zaroori hai GitHub Pages ke liye)
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Cloud machine (Runner)
+
+    steps:
+      # Step 1: Code ko Cloud Machine mein copy karo
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Cloud Machine ko GitHub Pages ke liye ready karo
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # Step 3: Files ko upload karo (Artifact banana)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'  # Matlab saara code upload karo
+
+      # Step 4: Final Deployment (Website Live karna)
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
