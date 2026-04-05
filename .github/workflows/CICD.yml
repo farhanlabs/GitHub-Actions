@@ -35,6 +35,7 @@ jobs:
         run: echo "Testing completed successfully"
 
   deploy:
+    if: ${{ github.event.inputs.environment == 'dev' }}
     runs-on: ubuntu-latest
     needs: test
     steps:
