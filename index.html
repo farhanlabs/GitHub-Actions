@@ -1,1 +1,203 @@
-<h1>Mera Naam Farhan Raza Hai, Aur tmhara naam kya hai</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhan Raza | DevOps & Cloud Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Skills Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">FR.</div>
+            <div>
+                <a href="#projects" style="text-decoration: none; color: var(--dark); margin-left: 20px;">Projects</a>
+                <a href="#contact" style="text-decoration: none; color: var(--dark); margin-left: 20px;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero container fade-in">
+        <h1>Farhan Raza</h1>
+        <p>DevOps Engineer | Cloud Infrastructure & Automation Specialist</p>
+        <a href="mailto:farhan@example.com" class="btn">Get In Touch</a>
+    </header>
+
+    <section id="projects" class="container" style="padding: 80px 0;">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Containerization</h3>
+                <p>Expert in Docker, image optimization, and managing multi-container apps with Docker Compose.</p>
+            </div>
+            <div class="card">
+                <h3>CI/CD Pipelines</h3>
+                <p>Automating deployments using GitHub Actions and Jenkins for seamless delivery.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud (AWS)</h3>
+                <p>Managing EC2, S3, and VPC architectures with a focus on security and scalability.</p>
+            </div>
+            <div class="card">
+                <h3>IaC</h3>
+                <p>Provisioning infrastructure using Terraform for consistent environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2026 Farhan Raza. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: #94a3b8;">Built with passion for Bharatops.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+        // Smooth Scrolling for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        console.log("Portfolio Loaded Successfully - Welcome Farhan!");
+    </script>
+</body>
+</html>
