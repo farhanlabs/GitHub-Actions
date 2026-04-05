@@ -1,0 +1,21 @@
+# This is Workflow Name
+name: Hello, Workflow
+
+on: 
+  push:
+    branches: [main]
+
+# These are jobs inside the workflow
+jobs: 
+  greets:
+    runs-on: ubuntu-latest
+    steps:
+      # Naya dash (-) laga, matlab Step 1 yahan se START hua
+      - name: say hello to user 
+        # Ye run usi Step 1 ke andar ka kaam hai, isliye dash nahi lagega
+        run: echo "Hello Doston" 
+
+      # Phir se naya dash (-) laga, matlab ab Step 2 START hua
+      - name: Say Hello to username
+        # Ye run usi Step 2 ka kaam hai, isliye yahan bhi dash nahi lagega
+        run: echo "Hello $USER"
