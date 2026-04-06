@@ -1,0 +1,25 @@
+name: python lint
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate: 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+        
+      - name: python setup 3.13
+        uses: actions/setup-python@v5 # setup-python ka naya version v5 hai
+        with:
+          python-version: "3.13"
+
+      # Yahan aap apna linting command add kar sakte hain
+      - name: Install Linting Tool
+        run: pip install flake8
+
+      - name: Run Lint
+        run: flake8 .
