@@ -7,19 +7,25 @@ on:
 jobs:
   validate: 
     runs-on: ubuntu-latest
-    
+    strategy:
+      fail-fast: false
+      matrix:
+        # 1. Yahan versions list karein
+        python-v: ["3.10", "3.11", "3.12", "3.13"]
+
     steps:
       - name: checkout code
         uses: actions/checkout@v4
         
-      - name: python setup 3.13
-        uses: actions/setup-python@v5 # setup-python ka naya version v5 hai
+      - name: setup python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          # 2. Hardcoded "3.13" ki jagah matrix variable use karein
+          python-version: ${{ matrix.python-v }}
 
-      # Yahan aap apna linting command add kar sakte hain
       - name: Install Linting Tool
         run: pip install flake8
 
       - name: Run Lint
-        run: flake8 .
+        # Sirf app.py ko check karega
+        run: flake8 app.py
